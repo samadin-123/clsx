@@ -9,11 +9,9 @@ function toVal(mix) {
 		if (isArray(mix)) {
 			var len=mix.length;
 			for (k=0; k < len; k++) {
-				if (mix[k]) {
-					if (y = toVal(mix[k])) {
-						str && (str += ' ');
-						str += y;
-					}
+				if (y = toVal(mix[k])) {
+					str && (str += ' ');
+					str += y;
 				}
 			}
 		} else {
