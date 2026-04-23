@@ -1,1 +1,2 @@
 thesis	attempt	metric	baseline	status	summary
+1	1	5844742	5787926	improved	Cached Array.isArray in a module-level variable to avoid repeated property lookups. Performance improved ~1% (5.79M to 5.84M ops/sec). The optimization reduces the overhead of accessing Array.isArray on each toVal() invocation.
