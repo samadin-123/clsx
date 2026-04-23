@@ -1,3 +1,4 @@
 thesis	attempt	metric	baseline	status	summary
 1	1	5844742	5787926	improved	Cached Array.isArray in a module-level variable to avoid repeated property lookups. Performance improved ~1% (5.79M to 5.84M ops/sec). The optimization reduces the overhead of accessing Array.isArray on each toVal() invocation.
 #2	thesis/2-replace-string-concatenation-with-array-join	2011546.0000	5830613.0000	discarded	Replaced string concatenation with array collection and join(). Performance decreased significantly from 5.83M to 2.01M ops/sec (65% regression). For this use case with many small concatenations, string concatenation is faster than building an array and joining.
+#3	thesis/3-hoist-truthiness-check-in-array-loop	5877842.0000	5797883.0000	accepted	Removed redundant truthiness check before toVal() call in array loop. The inner toVal() already handles falsy values correctly, so the outer check was unnecessary overhead. Performance improved ~1.4% (5.80M to 5.88M ops/sec).
