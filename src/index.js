@@ -1,10 +1,12 @@
+var isArray = Array.isArray;
+
 function toVal(mix) {
 	var k, y, str='';
 
 	if (typeof mix === 'string' || typeof mix === 'number') {
 		str += mix;
 	} else if (typeof mix === 'object') {
-		if (Array.isArray(mix)) {
+		if (isArray(mix)) {
 			var len=mix.length;
 			for (k=0; k < len; k++) {
 				if (mix[k]) {
